@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function Book({ book }) {
   const {
-    idBoook, title, category,
+    idBook, title, category,
   } = book;
   return (
     <tr>
-      <td>{idBoook}</td>
+      <td>{idBook}</td>
       <td>{title}</td>
       <td>{category}</td>
     </tr>
@@ -16,7 +16,7 @@ function Book({ book }) {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    idBoook: PropTypes.number.isRequired,
+    idBook: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
