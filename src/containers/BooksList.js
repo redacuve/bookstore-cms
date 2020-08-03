@@ -13,7 +13,7 @@ function BooksList(props) {
         </tr>
       </thead>
       <tbody>
-        <Book book={ {idBook: 1, title: 'title2', category: 'action'}} />
+        <Book book={{ idBook: 1, title: 'title2', category: 'action' }} />
       </tbody>
     </table>
   );
