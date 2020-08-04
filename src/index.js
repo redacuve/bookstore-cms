@@ -6,12 +6,16 @@ import { createStore } from 'redux';
 import App from './containers/App';
 import rootReducer from './reducers/index';
 
+const obtainRandomId = () => {
+  return Math.floor(Math.random() * 1000);
+}
+
 const initialState = {
   books: [
-    { idBook: Math.floor(Math.random * 1000), title: 'Pride and Prejudice', category: 'History' },
-    { idBook: Math.floor(Math.random * 1000), title: 'The Prince', category: 'Action' },
-    { idBook: Math.floor(Math.random * 1000), title: 'Ulysses', category: 'Biography' },
-    { idBook: Math.floor(Math.random * 1000), title: 'On the Origin of Species', category: 'Learning' },
+    { idBook: obtainRandomId(), title: 'Pride and Prejudice', category: 'History' },
+    { idBook: obtainRandomId(), title: 'The Prince', category: 'Action' },
+    { idBook: obtainRandomId(), title: 'Ulysses', category: 'Biography' },
+    { idBook: obtainRandomId(), title: 'On the Origin of Species', category: 'Learning' },
   ],
 };
 
