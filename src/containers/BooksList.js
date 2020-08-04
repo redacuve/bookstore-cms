@@ -1,8 +1,9 @@
 import React from 'react';
 import Book from '../components/Book';
+import { connect } from 'react-redux';
 
-// eslint-disable-next-line no-unused-vars
 function BooksList(props) {
+  const { books } = props;
   return (
     <table>
       <thead>
@@ -13,10 +14,18 @@ function BooksList(props) {
         </tr>
       </thead>
       <tbody>
-        <Book book={{ idBook: 1, title: 'title2', category: 'action' }} />
+        {
+          books.map(book => <Book book={{ idBook: book.idBook, title: book.title, category: book.category }} />)
+        }
       </tbody>
     </table>
   );
 }
 
-export default BooksList;
+const mapStateToProps = (state) => {
+  return {
+    books: state.booksReducer.books
+  }
+};
+
+export default connect(mapStateToProps, null)(BooksList);
