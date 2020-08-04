@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import booksReducer from './books';
 
-const rootReducer = (initialState) => combineReducers({
+const rootReducer = initialState => combineReducers({
   booksReducer: booksReducer(initialState),
 });
 

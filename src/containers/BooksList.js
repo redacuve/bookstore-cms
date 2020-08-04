@@ -1,6 +1,7 @@
 import React from 'react';
-import Book from '../components/Book';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Book from '../components/Book';
 
 function BooksList(props) {
   const { books } = props;
@@ -15,17 +16,34 @@ function BooksList(props) {
       </thead>
       <tbody>
         {
-          books.map(book => <Book book={{ idBook: book.idBook, title: book.title, category: book.category }} />)
+          books.map(book => (
+            <Book
+              key={book.idBook}
+              book={{
+                idBook: book.idBook,
+                title: book.title,
+                category: book.category,
+              }}
+            />
+          ))
         }
       </tbody>
     </table>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    books: state.booksReducer.books
-  }
+BooksList.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      idBook: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
+
+const mapStateToProps = state => ({
+  books: state.booksReducer.books,
+});
 
 export default connect(mapStateToProps, null)(BooksList);

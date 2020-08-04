@@ -6,9 +6,7 @@ import { createStore } from 'redux';
 import App from './containers/App';
 import rootReducer from './reducers/index';
 
-const obtainRandomId = () => {
-  return Math.floor(Math.random() * 1000);
-}
+const obtainRandomId = () => Math.floor(Math.random() * 1000);
 
 const initialState = {
   books: [
