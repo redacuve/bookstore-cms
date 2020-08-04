@@ -1,6 +1,6 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions';
 
-const books = (state = initialState, action) => {
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return {
@@ -10,11 +10,11 @@ const books = (state = initialState, action) => {
     case REMOVE_BOOK:
       return {
         ...state,
-        books: state.books.filter()
+        books: state.books.filter(),
       };
     default:
       return state;
   }
 };
 
-export default books;
+export default booksReducer;
