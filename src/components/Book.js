@@ -2,16 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Book({ book, removeBook }) {
-  const {
-    idBook, title, category,
-  } = book;
+  const { idBook, title, category } = book;
   return (
-    <tr>
-      <td>{idBook}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td><button type="button" onClick={() => removeBook(idBook)}>Remove Book</button></td>
-    </tr>
+    <div className="single-book">
+      <div className="book-info">
+        <h4 className="category">{category}</h4>
+        <h2 className="title">{title}</h2>
+        <h4 className="author">A great Author</h4>
+        <div className="book-actions">
+          <button className="" type="button">
+            Comments
+          </button>
+          <button className="" type="button" onClick={() => removeBook(idBook)}>
+            Remove
+          </button>
+          <button className="" type="button">
+            Edit
+          </button>
+        </div>
+      </div>
+      <div className="book-percentaje">
+        <div className="wrapper">
+          <div className="c100 p66 blue">
+            <div className="slice">
+              <div className="bar" />
+              <div className="fill" />
+            </div>
+          </div>
+        </div>
+        <div className="percent">
+          <h2>64%</h2>
+          <span>Completed</span>
+        </div>
+      </div>
+      <div className="book-progress">
+        <h4 className="current-chapter">Current Chapter</h4>
+        <span className="number-chapter">Chapter I</span>
+        <button type="button">Update Progress</button>
+      </div>
+    </div>
   );
 }
 

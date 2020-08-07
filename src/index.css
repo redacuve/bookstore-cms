@@ -79,3 +79,106 @@ body {
   padding-left: 3.125rem;
   padding-right: 3.125rem;
 }
+
+.single-book {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1rem;
+}
+
+.book-info,
+.book-percentaje,
+.book-progress {
+  width: 33.333%;
+}
+
+.book-info .category {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #121212;
+  margin: 0.5rem 0;
+}
+
+.book-info .title {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+  margin: 0;
+}
+
+.book-info .author {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+  margin-top: 0;
+}
+
+.book-actions button {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+.book-percentaje .percent {
+  margin-left: 80px;
+}
+
+.book-percentaje .percent h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  color: #121212;
+  margin: 0;
+}
+
+.book-percentaje .percent span {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #121212;
+}
+
+.book-progress .current-chapter {
+  opacity: 0.5;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #121212;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+.book-progress .number-chapter {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0.5rem 0 1rem 0;
+  letter-spacing: -0.4px;
+  color: #121212;
+  display: block;
+}
+
+.book-progress button {
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  display: block;
+}
