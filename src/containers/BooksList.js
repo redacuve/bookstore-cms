@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook } from '../actions';
+import CategoryFilter from '../components/CategoryFilter';
 
 export const categories = [
   'Action',
@@ -27,6 +28,10 @@ function BooksList(props) {
           <th>Title</th>
           <th>Category</th>
           <th>Remove Book</th>
+          <th>
+            Sort By:&nbsp;
+            <CategoryFilter categories={categories} />
+          </th>
         </tr>
       </thead>
       <tbody>
