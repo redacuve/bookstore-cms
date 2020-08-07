@@ -27,7 +27,10 @@ function BooksList(props) {
   } else {
     booksFiltered = [...books];
   }
-  const handleRemove = bookId => removeBook(bookId);
+  const handleRemove = bookId => {
+    removeBook(bookId);
+    document.querySelector('th select').firstElementChild.selected = true;
+  };
   const handleFilterChange = filter => changeFilter(filter);
   return (
     <table>
