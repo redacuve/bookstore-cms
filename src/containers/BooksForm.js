@@ -36,26 +36,29 @@ class BooksForm extends React.Component {
   render() {
     const { title } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="book-title">
-          Book Title
-          <input
-            type="text"
-            value={title}
-            id="book-title"
-            name="title"
-            onChange={this.handleChange}
-          />
-        </label>
-        <select name="category" id="categories" onChange={this.handleChange}>
-          {categories.map(c => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
-        <button type="submit">Save Book</button>
-      </form>
+      <div className="add-new-book">
+        <h3>Add New Book</h3>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="book-title">
+            <input
+              type="text"
+              value={title}
+              id="book-title"
+              name="title"
+              placeholder="Book Title"
+              onChange={this.handleChange}
+            />
+          </label>
+          <select name="category" id="categories" onChange={this.handleChange}>
+            {categories.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+          <button type="submit">Save Book</button>
+        </form>
+      </div>
     );
   }
 }
@@ -64,8 +67,8 @@ BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  createBook: book => {
+const mapDispatchToProps = (dispatch) => ({
+  createBook: (book) => {
     dispatch(createBook(book));
   },
 });
