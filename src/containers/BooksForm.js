@@ -18,6 +18,7 @@ class BooksForm extends React.Component {
       category: 'Action',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event){
@@ -25,10 +26,17 @@ class BooksForm extends React.Component {
     this.setState({[name]: value});
   }
 
+  handleSubmit(event){
+    event.preventDefault();
+
+    this.setState({title: '', category: 'Action'});
+    document.querySelector('#categories').value= 'Action';
+  }
+
   render() {
     const { title, category } = this.state;
     return (
-      <form >
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="book-title">
           Book Title
           <input type="text" value={title} id="book-title" name="title" onChange={this.handleChange}/>
@@ -40,7 +48,7 @@ class BooksForm extends React.Component {
             </option>
           ))}
         </select>
-        <button type="button">Save Book</button>
+        <button type="submit">Save Book</button>
       </form>
     );
   }
