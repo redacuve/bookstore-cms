@@ -4,6 +4,18 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook } from '../actions';
 
+export const categories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
+];
+
+export const obtainRandomId = () => Math.floor(Math.random() * 1000);
+
 function BooksList(props) {
   const { books, removeBook } = props;
   const handleRemove = bookId => removeBook(bookId);

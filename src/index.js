@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/App';
 import rootReducer from './reducers/index';
-import { obtainRandomId } from './containers/BooksForm';
+import { obtainRandomId } from './containers/BooksList';
 
 const initialState = {
   books: [
