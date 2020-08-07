@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function CategoryFilter(props) {
-  const { categories } = props;
+  const { categories, changeFilter } = props;
   return (
-    <select>
+    <select onChange={event => changeFilter(event.target.value)}>
       <option value="All">All</option>
       {categories.map(c => (
         <option key={c} value={c}>
@@ -17,6 +17,7 @@ function CategoryFilter(props) {
 
 CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;
