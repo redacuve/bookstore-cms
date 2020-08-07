@@ -14,6 +14,7 @@ const initialState = {
     { idBook: obtainRandomId(), title: 'Ulysses', category: 'Biography' },
     { idBook: obtainRandomId(), title: 'On the Origin of Species', category: 'Learning' },
   ],
+  filter: '',
 };
 
 const store = createStore(rootReducer(initialState));
