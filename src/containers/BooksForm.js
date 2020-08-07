@@ -13,17 +13,27 @@ const categories = [
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      title: '',
+      category: 'Action',
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    const { name, value } = event.target;
+    this.setState({[name]: value});
   }
 
   render() {
+    const { title, category } = this.state;
     return (
-      <form>
+      <form >
         <label htmlFor="book-title">
           Book Title
-          <input type="text" value="" id="book-title" />
+          <input type="text" value={title} id="book-title" name="title" onChange={this.handleChange}/>
         </label>
-        <select name="categories" id="categories">
+        <select name="category" id="categories"  onChange={this.handleChange}>
           {categories.map(c => (
             <option key={c} value={c}>
               {c}
