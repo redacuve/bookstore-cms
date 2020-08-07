@@ -4,6 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Montserrat';
   src: local('Montserrat'), url(./assets/fonts/Montserrat-Bold.ttf);
@@ -36,29 +37,45 @@ body {
 }
 
 .add-new-book h3 {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  color: #888888;
+  color: #888;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: -0.18px;
 }
 
-#book-title, #categories {
+#book-title,
+#categories {
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: white;
+  height: 2.8125rem;
+  margin-right: 34px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+#book-title {
+  width: 664px;
+}
+
+#categories {
+  width: 285px;
 }
 
 .add-book {
-  font-family: 'RobotoSlab';
+  font-family: 'RobotoSlab', sans-serif;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 0.5px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   border-radius: 3px;
   background-color: #0290ff;
   text-transform: uppercase;
   border: none;
+  height: 2.8125rem;
+  padding-left: 3.125rem;
+  padding-right: 3.125rem;
 }
