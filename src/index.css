@@ -1,6 +1,14 @@
 @font-face {
   font-family: 'Montserrat';
   src: local('Montserrat'), url(./assets/fonts/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./assets/fonts/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
 }
 
 body {
@@ -23,5 +31,10 @@ body {
 
 .add-new-book h3 {
   font-family: 'Montserrat';
+  font-size: 20px;
+  color: #888888;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: -0.18px;
 }
 
