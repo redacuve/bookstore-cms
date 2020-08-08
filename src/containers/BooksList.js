@@ -2,11 +2,36 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { removeBook } from '../actions';
+import { removeBook, changeFilter } from '../actions';
+import CategoryFilter from '../components/CategoryFilter';
+
+export const categories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
+];
+
+export const obtainRandomId = () => Math.floor(Math.random() * 1000);
 
 function BooksList(props) {
-  const { books, removeBook } = props;
-  const handleRemove = bookId => removeBook(bookId);
+  const {
+    books, removeBook, changeFilter, filter,
+  } = props;
+  let booksFiltered = [];
+  if (filter !== '') {
+    booksFiltered = books.filter(b => b.category === filter);
+  } else {
+    booksFiltered = [...books];
+  }
+  const handleRemove = bookId => {
+    removeBook(bookId);
+    document.querySelector('th select').firstElementChild.selected = true;
+  };
+  const handleFilterChange = filter => changeFilter(filter);
   return (
     <table>
       <thead>
@@ -15,10 +40,17 @@ function BooksList(props) {
           <th>Title</th>
           <th>Category</th>
           <th>Remove Book</th>
+          <th>
+            Sort By:&nbsp;
+            <CategoryFilter
+              categories={categories}
+              changeFilter={handleFilterChange}
+            />
+          </th>
         </tr>
       </thead>
       <tbody>
-        {books.map(book => (
+        {booksFiltered.map(book => (
           <Book
             key={book.idBook}
             book={{
@@ -42,16 +74,22 @@ BooksList.propTypes = {
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   books: state.booksReducer.books,
+  filter: state.filterReducer.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
   removeBook: bookId => {
     dispatch(removeBook(bookId));
+  },
+  changeFilter: filter => {
+    dispatch(changeFilter(filter));
   },
 });
 

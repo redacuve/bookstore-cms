@@ -2,18 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
-
-const categories = [
-  'Action',
-  'Biography',
-  'History',
-  'Horror',
-  'Kids',
-  'Learning',
-  'Sci-Fi',
-];
-
-export const obtainRandomId = () => Math.floor(Math.random() * 1000);
+import { categories, obtainRandomId } from './BooksList';
 
 class BooksForm extends React.Component {
   constructor(props) {
