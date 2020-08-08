@@ -29,27 +29,22 @@ function BooksList(props) {
   }
   const handleRemove = bookId => {
     removeBook(bookId);
-    document.querySelector('th select').firstElementChild.selected = true;
+    document.querySelector('.filter select').firstElementChild.selected = true;
   };
   const handleFilterChange = filter => changeFilter(filter);
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Books ID</th>
-          <th>Title</th>
-          <th>Category</th>
-          <th>Remove Book</th>
-          <th>
-            Sort By:&nbsp;
-            <CategoryFilter
-              categories={categories}
-              changeFilter={handleFilterChange}
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody>
+    <div className="books-list">
+      <nav className="navbar">
+        <div className="logo">Bookstore CMS</div>
+        <div className="books">Books</div>
+        <div className="filter">
+          <CategoryFilter
+            categories={categories}
+            changeFilter={handleFilterChange}
+          />
+        </div>
+      </nav>
+      <div className="books-container">
         {booksFiltered.map(book => (
           <Book
             key={book.idBook}
@@ -61,8 +56,8 @@ function BooksList(props) {
             removeBook={handleRemove}
           />
         ))}
-      </tbody>
-    </table>
+      </div>
+    </div>
   );
 }
 
