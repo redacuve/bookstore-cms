@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 function Book({ book, removeBook }) {
   const { idBook, title, category } = book;
+  const percentPH = Math.floor(Math.random() * 101);
+  const className = `c100 p${percentPH} blue`;
   return (
     <div className="single-book">
       <div className="book-info">
@@ -22,16 +24,18 @@ function Book({ book, removeBook }) {
         </div>
       </div>
       <div className="book-percentaje">
-        <div className="wrapper">
-          <div className="c100 p66 blue">
-            <div className="slice">
-              <div className="bar" />
-              <div className="fill" />
-            </div>
+        <div className={className}>
+          <div className="slice">
+            <div className="bar" />
+            <div className="fill" />
           </div>
         </div>
         <div className="percent">
-          <h2>64%</h2>
+          <h2>
+            {percentPH}
+            {' '}
+            %
+          </h2>
           <span>Completed</span>
         </div>
       </div>
