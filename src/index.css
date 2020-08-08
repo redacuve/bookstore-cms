@@ -55,17 +55,10 @@
   border: solid 1px #e8e8e8;
   background-color: white;
   height: 2.8125rem;
-  margin-right: 34px;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-}
-
-#book-title {
-  width: 664px;
-}
-
-#categories {
-  width: 285px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .add-book {
@@ -80,22 +73,25 @@
   text-transform: uppercase;
   border: none;
   height: 2.8125rem;
-  padding-left: 3.125rem;
-  padding-right: 3.125rem;
+  width: 100%;
 }
 
 .single-book {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  align-items: center;
+  align-items: flex-end;
   padding: 1rem;
   box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
 }
 
 .book-info,
 .book-percentaje,
 .book-progress {
-  width: 30%;
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
 .book-info .category {
@@ -137,7 +133,12 @@
 }
 
 .book-percentaje .percent {
-  margin-left: 80px;
+  margin-left: 10px;
+}
+
+.book-percentaje {
+  display: flex;
+  justify-content: center;
 }
 
 .book-percentaje .percent h2 {
@@ -186,6 +187,51 @@
   text-align: center;
   color: #fff;
   border: none;
-  padding: 0.5rem 1.5rem;
+  width: 100%;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   display: block;
+}
+
+@media (min-width: 992px) {
+  .book-info,
+  .book-percentaje,
+  .book-progress {
+    width: 33.333%;
+    margin: 0;
+  }
+
+  .single-book {
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+  }
+
+  #book-title,
+  #categories {
+    margin-right: 34px;
+  }
+
+  #book-title {
+    width: 664px;
+  }
+
+  #categories {
+    width: 285px;
+  }
+
+  .book-percentaje {
+    justify-content: flex-start;
+  }
+
+  .add-book {
+    width: fit-content;
+    padding-left: 3.125rem;
+    padding-right: 3.125rem;
+  }
+
+  .book-progress button {
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+  }
 }
