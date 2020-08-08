@@ -18,22 +18,26 @@
   font-style: normal;
 }
 
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navbar .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #0290ff;
+  display: inline-block;
+}
+
+.books {
+  margin: 0 1.5rem;
+}
+
+.navbar .books,
+.filter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 .add-new-book h3 {
@@ -85,12 +89,13 @@ body {
   width: 100%;
   align-items: center;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .book-info,
 .book-percentaje,
 .book-progress {
-  width: 33.333%;
+  width: 30%;
 }
 
 .book-info .category {
@@ -140,6 +145,7 @@ body {
   font-size: 32px;
   color: #121212;
   margin: 0;
+  display: inline-block;
 }
 
 .book-percentaje .percent span {
@@ -147,6 +153,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #121212;
+  display: block;
 }
 
 .book-progress .current-chapter {
