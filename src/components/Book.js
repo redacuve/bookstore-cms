@@ -25,12 +25,12 @@ function Book({ book, removeBook }) {
       </div>
       <div className="book-percentaje">
         <div className="percent-circle-container">
-        <div className={className}>
-          <div className="slice">
-            <div className="bar" />
-            <div className="fill" />
+          <div className={className}>
+            <div className="slice">
+              <div className="bar" />
+              <div className="fill" />
+            </div>
           </div>
-        </div>
         </div>
         <div className="percent">
           <h2>
