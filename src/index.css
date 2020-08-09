@@ -18,12 +18,42 @@
   font-style: normal;
 }
 
+.body,
+#root {
+  background-color: #f5f6fa;
+}
+
+.App {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+hr {
+  height: 2px;
+  border: solid 1px #e8e8e8;
+  width: 100%;
+  background-color: #e8e8e8;
+}
+
+.navbar {
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
 .navbar .logo {
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: #0290ff;
   display: inline-block;
+}
+
+.navbar svg {
+  height: 20px;
+  fill: #0290ff;
 }
 
 .books {
@@ -40,6 +70,10 @@
   display: inline-block;
 }
 
+.add-new-book {
+  background-color: #f5f6fa;
+}
+
 .add-new-book h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -47,6 +81,7 @@
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: -0.18px;
+  background-color: #f5f6fa;
 }
 
 #book-title,
@@ -81,10 +116,13 @@
   flex-wrap: wrap;
   width: 100%;
   align-items: flex-end;
-  padding: 1rem;
+  padding: 1rem 2rem;
   box-sizing: border-box;
   justify-content: center;
   text-align: center;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  margin: 1rem 0;
 }
 
 .book-info,
@@ -188,17 +226,29 @@
   color: #fff;
   border: none;
   width: 100%;
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
+  padding: 0.35rem 0.5rem;
   display: block;
+  text-transform: uppercase;
 }
 
 @media (min-width: 992px) {
   .book-info,
   .book-percentaje,
   .book-progress {
-    width: 33.333%;
     margin: 0;
+  }
+
+  .book-info {
+    width: 40%;
+  }
+
+  .book-percentaje,
+  .book-progress {
+    width: 30%;
+  }
+
+  .user-svg {
+    height: min-content;
   }
 
   .single-book {
@@ -209,15 +259,15 @@
 
   #book-title,
   #categories {
-    margin-right: 34px;
+    margin-right: 30px;
   }
 
   #book-title {
-    width: 664px;
+    width: 550px;
   }
 
   #categories {
-    width: 285px;
+    width: 220px;
   }
 
   .book-percentaje {
@@ -226,12 +276,16 @@
 
   .add-book {
     width: fit-content;
-    padding-left: 3.125rem;
-    padding-right: 3.125rem;
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
   }
 
   .book-progress button {
     width: fit-content;
     padding: 0.5rem 1.5rem;
+  }
+
+  .add-new-book form {
+    width: 992px;
   }
 }
