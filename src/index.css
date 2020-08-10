@@ -1,17 +1,291 @@
-body {
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./assets/fonts/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./assets/fonts/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoSlab';
+  src: local('RobotoSlab'), url(./assets/fonts/RobotoSlab-VariableFont_wght.ttf);
+  font-style: normal;
+}
+
+.body,
+#root {
+  background-color: #f5f6fa;
+}
+
+.App {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+hr {
+  height: 2px;
+  border: solid 1px #e8e8e8;
+  width: 100%;
+  background-color: #e8e8e8;
+}
+
+.navbar {
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #0290ff;
+  display: inline-block;
+}
+
+.navbar svg {
+  height: 20px;
+  fill: #0290ff;
+}
+
+.books {
+  margin: 0 1.5rem;
+}
+
+.navbar .books,
+.filter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.add-new-book {
+  background-color: #f5f6fa;
+}
+
+.add-new-book h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  background-color: #f5f6fa;
+}
+
+#book-title,
+#categories {
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: white;
+  height: 2.8125rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-book {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #0290ff;
+  text-transform: uppercase;
+  border: none;
+  height: 2.8125rem;
+  width: 100%;
+}
+
+.single-book {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-end;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  margin: 1rem 0;
+}
+
+.book-info,
+.book-percentaje,
+.book-progress {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.book-info .category {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #121212;
+  margin: 0.5rem 0;
+}
+
+.book-info .title {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+.book-info .author {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+  margin-top: 0;
+}
+
+.book-actions button {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+.book-percentaje .percent {
+  margin-left: 10px;
+}
+
+.book-percentaje {
+  display: flex;
+  justify-content: center;
+}
+
+.book-percentaje .percent h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  color: #121212;
+  margin: 0;
+  display: inline-block;
+}
+
+.book-percentaje .percent span {
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #121212;
+  display: block;
+}
+
+.book-progress .current-chapter {
+  opacity: 0.5;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #121212;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+.book-progress .number-chapter {
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0.5rem 0 1rem 0;
+  letter-spacing: -0.4px;
+  color: #121212;
+  display: block;
+}
+
+.book-progress button {
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .book-info,
+  .book-percentaje,
+  .book-progress {
+    margin: 0;
+  }
+
+  .book-info {
+    width: 40%;
+  }
+
+  .book-percentaje,
+  .book-progress {
+    width: 30%;
+  }
+
+  .user-svg {
+    height: min-content;
+  }
+
+  .single-book {
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+  }
+
+  #book-title,
+  #categories {
+    margin-right: 30px;
+  }
+
+  #book-title {
+    width: 550px;
+  }
+
+  #categories {
+    width: 220px;
+  }
+
+  .book-percentaje {
+    justify-content: flex-start;
+  }
+
+  .add-book {
+    width: fit-content;
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+  }
+
+  .book-progress button {
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .add-new-book form {
+    width: 992px;
+  }
 }
